@@ -16,4 +16,6 @@
 npm-debug.log
 testem.log
 
+# Webstorm Config files
 .idea
+
