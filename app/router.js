@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('fields');
   this.route('forms');
   this.route('submissions');
+  this.route('templateFields');
 });
 
 export default Router;
