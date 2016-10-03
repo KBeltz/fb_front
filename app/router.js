@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('users');
   this.route('fields');
   this.route('forms');
+  this.route('submissions');
 });
 
 export default Router;
