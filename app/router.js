@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('submissions');
   this.route('templateFields');
   this.route('templates');
+  this.route('user', { path: 'users/:user_id' });
 });
 
 export default Router;
