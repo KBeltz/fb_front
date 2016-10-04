@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('submissions');
   this.route('templateFields');
   this.route('templates');
+
   this.route('user', { path: 'users/:user_id' });
   this.route('page-not-found', { path: '/*wildcard' });
 });
