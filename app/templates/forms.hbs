@@ -1,1 +1,10 @@
-{{outlet}}
+<h4>Completed Forms</h4>
+{{#each model as |form|}}
+    <ul>
+        <li style="list-style:none">
+            <!--{{!#link-to 'user' user.id}}-->
+          {{form.formName}}
+            <!--{{!/link-to}}-->
+        </li>
+    </ul>
+{{/each}}
