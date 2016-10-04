@@ -1,7 +1,7 @@
 {
   "name": "poc",
   "version": "0.0.0",
-  "description": "Small description for poc goes here",
+  "description": "Form Builder proof of concept application",
   "private": true,
   "directories": {
     "doc": "doc",
