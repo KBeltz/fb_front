@@ -1,5 +1,9 @@
 <h3>Users Index</h3>
 
 {{#each model as |user|}}
-  {{user.firstName}}
+  <ul>
+     <li>
+       {{user.firstName}} {{user.lastName}}
+     </li>
+  </ul>
 {{/each}}
