@@ -9,13 +9,14 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('users');
   this.route('fields');
-  this.route('forms');
+  this.route('forms', { path: '/completed-forms' });
   this.route('submissions');
   this.route('templateFields');
   this.route('templates');
 
   this.route('user', { path: 'users/:user_id' });
   this.route('page-not-found', { path: '/*wildcard' });
+  this.route('user-forms');
 });
 
 export default Router;

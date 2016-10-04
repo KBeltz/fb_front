@@ -1,1 +1,11 @@
-{{outlet}}
+<h4>Litterally Just Templates</h4>
+{{#each model as |template|}}
+  <ul>
+    <li style="list-style:none">
+        <!--{{!#link-to 'user' user.id}}-->
+      {{template.templateName}}
+        <!--{{!/link-to}}-->
+    </li>
+  </ul>
+{{/each}}
+
