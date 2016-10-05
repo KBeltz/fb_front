@@ -17,7 +17,7 @@ Router.map(function() {
   this.route('user', { path: 'users/:user_id' });
   this.route('page-not-found', { path: '/*wildcard' });
   this.route('user-forms');
-  this.route('template');
+  this.route('template-show', { path: 'templates/:template_id' });
   this.route('form', { path: 'completed-forms/:form_id' });
 });
 
