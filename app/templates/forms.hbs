@@ -2,7 +2,9 @@
 {{#each model as |form|}}
     <ul>
         <li style="list-style:none">
-          {{form.template.templateName}}: {{form.user.firstName}} {{form.user.lastName}}
+          {{#link-to 'form' form}}
+            {{form.template.templateName}}: {{form.user.firstName}} {{form.user.lastName}}
+          {{/link-to}}
         </li>
     </ul>
 {{/each}}
