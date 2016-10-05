@@ -2,9 +2,7 @@
 {{#each model as |form|}}
     <ul>
         <li style="list-style:none">
-            <!--{{!#link-to 'user' user.id}}-->
-          {{form.formName}}
-            <!--{{!/link-to}}-->
+          {{form.isComplete}}
         </li>
     </ul>
 {{/each}}
