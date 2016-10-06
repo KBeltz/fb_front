@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.get('store').findAll('user');
+    return this.get('store').findAll('user', {reload: true}).then(model => model.sortBy('lastName', 'firstName'));
+
   }
 });
