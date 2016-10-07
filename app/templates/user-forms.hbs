@@ -1,13 +1,4 @@
 <h4>User Forms</h4>
-{{#each model as |user|}}
-  <ul>
-      <li style="list-style:none">
-          <!--{{!#link-to 'user' user.id}}-->
-                {{#user-display user=user}}
-                  There's something here
-                {{/user-display}}
-          <!--{{!/link-to}}-->
-      </li>
-  </ul>
-{{/each}}
+{{users-list users=model usersTemplate=false}}
+
 

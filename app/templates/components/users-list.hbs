@@ -1,1 +1,22 @@
-{{yield}}
+<ul>
+  {{#each users as |user|}}
+      <li style="list-style: none">
+        {{#if usersTemplate}}
+          {{#link-to 'new-template' user.id}}
+            {{#user-display user=user}}
+
+            {{/user-display}}
+          {{/link-to}}
+
+        {{else}}
+        {{!#link-to 'new-template' user.id}}
+          {{#user-display user=user}}
+
+          {{/user-display}}
+        {{!/link-to}}
+
+
+        {{/if}}
+      </li>
+  {{/each}}
+</ul>
