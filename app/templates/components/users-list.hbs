@@ -2,7 +2,7 @@
   {{#each users as |user|}}
       <li style="list-style: none">
         {{#if usersTemplate}}
-          {{#link-to 'new-template' user.id}}
+          {{#link-to routeName user.id}}
             {{#user-display user=user}}
 
             {{/user-display}}
