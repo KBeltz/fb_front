@@ -14,10 +14,10 @@ export default DS.Model.extend({
   birthdate: DS.attr('date'),
   personalPhone: DS.attr('string'),
   ssn: DS.attr('string'),
-  updateBy: DS.attr('number'),
-  insertBy: DS.attr('number'),
-  updateTime: DS.attr('date'),
-  insertTime: DS.attr('date'),
+  // updateBy: DS.attr('number'),
+  // insertBy: DS.attr('number'),
+  // updateTime: DS.attr('date'),
+  // insertTime: DS.attr('date'),
   templates: DS.hasMany('template'),
   forms: DS.hasMany('form')
 });
