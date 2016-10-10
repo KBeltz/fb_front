@@ -1,1 +1,11 @@
 <h4>Template Show</h4>
+
+<div class="w3-row">
+    <div class="w3-col s9 m9 l9">
+      {{model.templateName}}
+    </div>
+    <div class="w3-col s3 m3 l3">
+        {{#link-to 'template.send-template'}}<button class="w3-btn">Send Template</button>{{/link-to}}
+    </div>
+</div>
+
