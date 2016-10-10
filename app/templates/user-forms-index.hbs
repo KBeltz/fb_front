@@ -2,8 +2,10 @@
 
 <ul>
     {{#each model as |form|}}
-      {{#link-to 'form' form.id}}
+      {{#link-to 'user-forms-index.user-forms-show' form}}
         <li>{{form.template.templateName}}</li>
       {{/link-to}}
     {{/each}}
 </ul>
+
+{{outlet}}
