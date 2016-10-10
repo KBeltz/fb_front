@@ -1,11 +1,11 @@
 <h4>Literally Just Templates</h4>
 {{#each model as |template|}}
-  <ul>
-    <li style="list-style:none">
-      {{#link-to 'template-show' template}}
-        {{template.templateName}}
-      {{/link-to}}
-    </li>
-  </ul>
+    <ul>
+        <li style="list-style:none">
+          {{#link-to 'template-show' template}}
+            {{template.templateName}}
+          {{/link-to}}
+        </li>
+    </ul>
 {{/each}}
 

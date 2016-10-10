@@ -1,12 +1,12 @@
 <h4>User Forms</h4>
 {{log "PARAMS: " query-params}}
 {{#each model as |user|}}
-  <ul>
-      <li style="list-style:none">
-          <!--{{!#link-to 'user' user.id}}-->
-              {{user.firstName}} {{user.lastName}}
-          <!--{{!/link-to}}-->
-      </li>
-  </ul>
+    <ul>
+        <li style="list-style:none">
+            <!--{{!#link-to 'user' user.id}}-->
+          {{user.firstName}} {{user.lastName}}
+            <!--{{!/link-to}}-->
+        </li>
+    </ul>
 {{/each}}
 
