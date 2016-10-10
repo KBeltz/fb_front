@@ -2,11 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   model() {
-    
+
   },
-  
+
   store: Ember.inject.service(),
-  
+
   fields: null,
 
   didInsertElement() {
@@ -16,11 +16,4 @@ export default Ember.Component.extend({
     });
   },
   
-  showMe: false,
-  
-  actions: {
-    toggleMe() {
-      this.toggleProperty('showMe');
-    }
-  }
 });
