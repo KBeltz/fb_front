@@ -1,0 +1,11 @@
+<h4>List of Uncompleted Forms</h4>
+
+<ul>
+    {{#each model as |form|}}
+      {{#link-to 'user-forms-index.user-forms-show' form}}
+        <li>{{form.template.templateName}}</li>
+      {{/link-to}}
+    {{/each}}
+</ul>
+
+{{outlet}}

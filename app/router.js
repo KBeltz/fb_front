@@ -13,11 +13,19 @@ Router.map(function() {
   this.route('submissions');
   this.route('templateFields');
   this.route('templates');
+  this.route('new-template', { path: 'users/:user_id/new-template'})
 
   this.route('user', { path: 'users/:user_id' });
   this.route('user-forms');
-  this.route('template-show', { path: 'templates/:template_id' });
+  // template show
+  this.route('template-show', { path: 'templates/:template_id' }, function() {
+    this.route('send-template');
+  });
+
   this.route('form', { path: 'completed-forms/:form_id' });
+  this.route('user-forms-index', { path: 'user-forms/:user_id/forms'}, function() {
+    this.route('user-forms-show', { path: ':form_id' });
+  });
   // wildcard route
   this.route('page-not-found', { path: '/*wildcard' });
 });
