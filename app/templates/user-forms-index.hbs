@@ -1,0 +1,9 @@
+<h4>List of {{user.firstName}} {{user.lastName}}'s Forms</h4>
+
+<ul>
+    {{#each model as |form|}}
+      {{#link-to 'form' form.id}}
+        <li>{{form.template.templateName}}</li>
+      {{/link-to}}
+    {{/each}}
+</ul>
