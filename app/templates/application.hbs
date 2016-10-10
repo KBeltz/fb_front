@@ -1,21 +1,4 @@
-<div id="container">
-    <div id="all_wrapper_mobile_color_strip"></div>
-    <div id="all_wrapper">
-        <header id="main_header">
-            <div id="page_header">
-                <nav id="header_content">
-                    <a id="hb_home" href="https://sandbox.atssecured.com/"><img class="header_button" src="https://d11ea4l31hsnew.cloudfront.net/images/general_ui/hb_home.png" alt="Home"></a>
-                    <img id="header_more" class="header_button" src="https://d11ea4l31hsnew.cloudfront.net/images/general_ui/hb_more.png" onclick="toggle_more_menu();" alt="More Menu">
-                </nav>
-                <div id="logo"></div>
-            </div>
-        </header>
-        <main id="main_container">
-            <noscript>We're sorry, but ATS Secured requires JavaScript to be enabled in order to function correctly. Please enable JavaScript or download a JavaScript-enabled browser before continuing.</noscript>
-            {{outlet}}
-            {{#link-to 'index'}}
-            <button class="w3-btn w3-margin-top">home</button>
-            {{/link-to}}
-        </main>
-    </div>
-</div>
+{{outlet}}
+{{#link-to 'index'}}
+    <button class="w3-btn w3-margin-top">home</button>
+{{/link-to}}
