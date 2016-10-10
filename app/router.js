@@ -23,7 +23,9 @@ Router.map(function() {
   });
 
   this.route('form', { path: 'completed-forms/:form_id' });
-  this.route('user-forms-index', { path: 'user-forms/:user_id/forms'});
+  this.route('user-forms-index', { path: 'user-forms/:user_id/forms'}, function() {
+    this.route('user-forms-show', { path: ':form_id' });
+  });
   // wildcard route
   this.route('page-not-found', { path: '/*wildcard' });
 });
