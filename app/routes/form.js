@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    return this.get('store').findRecord('form', params["formId"]);
+    console.log("HERE look HERE for params" + params["form_id"])
+    return this.get('store').find('form', params["form_id"]);
   }
 });
