@@ -5,9 +5,9 @@
 {{#each model as |user|}}
     <ul>
         <li style="list-style:none">
-            <!--{{!#link-to 'user' user.id}}-->
-          {{user.firstName}} {{user.lastName}}
-            <!--{{!/link-to}}-->
+          {{#link-to 'user-forms-index' user.id}}
+            {{user.firstName}} {{user.lastName}}
+          {{/link-to}}
         </li>
     </ul>
 {{/each}}
