@@ -1,11 +1,5 @@
 <h3>Users Index</h3>
-<h6><i>The user's name will eventually link to the new template page, not to the user show page.</i></h6>
-{{#each model as |user index|}}
-    <ul>
-        <li style="list-style: none">
-          {{#link-to 'user' user.id}}
-            {{list.list-item index}}. {{user.firstName}} {{user.lastName}}
-          {{/link-to}}
-        </li>
-    </ul>
-{{/each}}
+
+{{!-- <h6><i>The user's name will eventually link to the new template page, not to the user show page.</i></h6> --}}
+{{users-list users=model usersTemplate=true linkName='new-template'}}
+
