@@ -1,11 +1,30 @@
-<h4>Template Show</h4>
+<h4>Template Show page here</h4>
 
 <div class="w3-row">
     <div class="w3-col s9 m9 l9">
-      {{model.templateName}}
+        <b>Template Name:</b>{{model.templateName}}
+        <ul style="list-style:none">
+          {{#each model.templateFields as |templateField|}}
+              <li>
+                  <label for="{{templateField.field.fieldName}}">{{templateField.field.fieldName}}</label>
+
+                {{input type="text" name=templateField.field.fieldName }}
+              </li>
+
+          {{/each}}
+
+        </ul>
+
+
+
+
+
+
+
+      {{model.template.templateFields}}
     </div>
     <div class="w3-col s3 m3 l3">
-        {{#link-to 'template-show.send-template'}}<button class="w3-btn">Send Template</button>{{/link-to}}
+      {{#link-to 'template-show.send-template'}}<button class="w3-btn">Send Template</button>{{/link-to}}
     </div>
 </div>
 
