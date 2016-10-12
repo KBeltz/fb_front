@@ -14,29 +14,6 @@
           {{/each}}
 
         </ul>
-        <!--form builder ember addon testing-->
-
-      {{#form-builder for=this action="submit" as |f|}}
-        <ul>
-        {{#each model.templateFields as |templateField|}}
-            <!--<li>What the add on requires-->
-          <!--{{!f.input "title"}}-->
-            <!--</li>-->
-            <!--<li>Trying varible entry in place of 'title'- takes as literal string-->
-          <!--{{!f.input "templateField.field.fieldName"}}-->
-            <!--</li>-->
-            <!--<li>Trying varible entry in place of 'title' without quotes - error<br>-->
-             <!--83399: Uncaught TypeError: Cannot read property 'match' of null-->
-            <!--{{!f.input templateField.field.fieldName}}</li>-->
-          <li>
-              <!--concatenation (concat 'add-item-' title)-->
-            {{f.input (concat '' templateField.field.fieldName)}}</li>
-        {{/each}}
-        </ul>
-
-        {{f.submit}}
-
-      {{/form-builder}}
 
     </div>
     <div class="w3-col s3 m3 l3">
