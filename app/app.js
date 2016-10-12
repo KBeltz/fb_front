@@ -14,6 +14,19 @@ App = Ember.Application.extend({
   rootElement: '#main_container'
 });
 
+// Global error handlers written by Chris Foral on 10-12-16
+Ember.onerror = function (error) {
+  console.log('Ember.onerror handler', error.message);
+};
+
+Ember.RSVP.on('error', function (error) {
+  console.log('Ember.RSVP error handler', error);
+});
+
+Ember.Logger.error = function (message, cause, stack) {
+  console.log('Ember.Logger.error handler', message, cause, stack);
+};
+
 loadInitializers(App, config.modulePrefix);
 
 export default App;
