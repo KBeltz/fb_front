@@ -2,6 +2,7 @@
 
 <div class="w3-row">
     <div class="w3-col s9 m9 l9">
+      {{ember-progress-bar}}
         <b>Template Name:</b>{{model.templateName}}
         <ul style="list-style:none">
           {{#each model.templateFields as |templateField|}}
@@ -22,6 +23,7 @@
       {{#tooltip-on-element}}
           Here is the info in a tooltip!
       {{/tooltip-on-element}}
+
     </div>
 </div>
 
