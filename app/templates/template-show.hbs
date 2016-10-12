@@ -2,7 +2,14 @@
 
 <div class="w3-row">
     <div class="w3-col s9 m9 l9">
-      {{ember-progress-bar}}
+      {{!ember-progress-bar}}
+      {{!ember-progress-bar useDefaultStep=true}}
+      <div class="w3 col 100px-height">
+      {{ember-progress-bar  progress=".5"}}
+          <br>
+        {{ember-progress-bar  progress=".25" options=(hash strokeWidth=5 duration=1000 trailColor='#c1c1c1' color='#336633')}}
+      </div>
+
         <b>Template Name:</b>{{model.templateName}}
         <ul style="list-style:none">
           {{#each model.templateFields as |templateField|}}
