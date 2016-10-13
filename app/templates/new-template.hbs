@@ -4,7 +4,7 @@
     <h4>New Template</h4>
     
 
-    {{drag-drop}}
+    {{field-drag-drop}}
     {{#fields-list}}
 
     {{/fields-list}}
@@ -15,22 +15,16 @@
     
     <h4>Template</h4>
     <br>
-    {{drag-drop-zone}}
+    {{field-drag-drop-zone}}
 
     <br>
     <br>
     <br>
-
-  </div>
-</div>
-
-<div class="w3-row">
-  <div class="w3-col l4">
     
 
     <label for="templateName">Template Name (required): </label>{{input value=model.templateName min="3" maxlength="50" required="true" name="templateName" type="text"}}
     <h4>Here's the templateName: {{model.templateName}}</h4>
-    <button {{action 'createTemplate' model}}>This ol' button</button>
-    
+    <button {{action 'createTemplate' model}}>Create Template (WIP)</button>
+
   </div>
 </div>
