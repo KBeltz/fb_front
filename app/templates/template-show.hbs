@@ -4,11 +4,11 @@
     <div class="w3-col s9 m9 l9">
       {{!ember-progress-bar}}
       {{!ember-progress-bar useDefaultStep=true}}
-      <!--<div class="w3 col 100px-height">-->
-      <!--{{!ember-progress-bar  progress=".5"}}-->
-          <!--<br>-->
+        <!--<div class="w3 col 100px-height">-->
+        <!--{{!ember-progress-bar  progress=".5"}}-->
+        <!--<br>-->
         <!--{{!ember-progress-bar  progress=".25" options=(hash strokeWidth=5 duration=1000 trailColor='#c1c1c1' color='#336633')}}-->
-      <!--</div>-->
+        <!--</div>-->
 
         <b>Template Name:</b>{{model.templateName}}
         <ul style="list-style:none">
@@ -16,9 +16,10 @@
               <li>
                   <label for="{{templateField.field.fieldName}}">{{templateField.field.fieldName}} {{templateField.field.id}}</label>
 
-                {{#if}}
+                {{#if (eq templateField.field.id '4')}}
+                  {{input type="checkbox" name=templateField.field.fieldname}}
                 {{else}}
-                {{input type="text" name=templateField.field.fieldName }}
+                  {{input type="text" name=templateField.field.fieldName }}
                 {{/if}}
               </li>
 
