@@ -1,19 +1,36 @@
 
-<h4>Demo of drag and drop</h4>
-<br>
-{{drag-drop-zone}}
+<div class="w3-row">
+  <div class="w3-col l4">
+    <h4>New Template</h4>
+    
 
-<br>
-<br>
-<br>
-{{drag-drop}}
-{{outlet}}
-<br>
-<br>
-{{drag-drop-zone}}
-<br>
+    {{drag-drop}}
+    {{#fields-list}}
 
-<h4>New Template</h4>
-{{#fields-list}}
+    {{/fields-list}}
+    
+  </div>
 
-{{/fields-list}}
+  <div class="w3-col l8">
+    
+    <h4>Template</h4>
+    <br>
+    {{drag-drop-zone}}
+
+    <br>
+    <br>
+    <br>
+
+  </div>
+</div>
+
+<div class="w3-row">
+  <div class="w3-col l4">
+    
+
+    <label for="templateName">Template Name (required): </label>{{input value=model.templateName min="3" maxlength="50" required="true" name="templateName" type="text"}}
+    <h4>Here's the templateName: {{model.templateName}}</h4>
+    <button {{action 'createTemplate' model}}>This ol' button</button>
+    
+  </div>
+</div>

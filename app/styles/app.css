@@ -10,4 +10,9 @@
   border: 4px solid red;
 }
 
+.kitten-img {
+  height: 150px;
+  width: 175px;
+}
+
 /* end drag and drop */
