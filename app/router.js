@@ -27,7 +27,8 @@ Router.map(function() {
     this.route('user-forms-show', { path: ':form_id' });
   });
   // wildcard route
-  this.route('page-not-found', { path: '/*wildcard' });
+  // this.route('page-not-found', { path: '/*wildcard' });
+  this.route('application-error');
 });
 
 export default Router;
