@@ -1,3 +1,9 @@
 <h4>Form to Fill Out</h4>
 
 <b>{{model.template.templateName}}</b> {{model.user.firstName}} {{model.user.lastName}}
+
+<ul>
+  {{#each model.template.templateFields as |templateField|}}
+    <li>{{templateField.field.fieldName}} - {{user-fieldname-parser user=model.user field=templateField.field.fieldName}}</li>
+  {{/each}}
+</ul>
