@@ -1,2 +1,21 @@
 <h1>Application Error</h1>
-<p>{{model.message}}</p>
+
+<h3>Title: {{title}}</h3>
+
+<p>Name: {{model.name}}</p>
+
+<p>Stack: {{model.stack}}</p>
+
+<p>Adapter Error?: {{model.isAdapterError}}</p>
+
+
+<p><strong>Below Not Working</strong></p>
+<p>Error Code: {{model.code}}</p>
+<p>ID: {{model.id}}</p>
+<p>About: {{model.links.about}}</p>
+<p>Status: {{model.status}}</p>
+<p>Code: {{model.code}}</p>
+<p>Pointer: {{model.source.pointer}}</p>
+<p>Parameter: {{model.source.parameter}}</p>
+<p>Meta: {{model.meta}}</p>
+
