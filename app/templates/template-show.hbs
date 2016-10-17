@@ -9,17 +9,19 @@
         <!--<br>-->
         <!--{{!ember-progress-bar  progress=".25" options=(hash strokeWidth=5 duration=1000 trailColor='#c1c1c1' color='#336633')}}-->
         <!--</div>-->
-
+<div class="white_background w3-card-2 w3-col s6 m6 l6">
         <b>Template Name:</b>{{model.templateName}}
         <ul style="list-style:none">
           {{#each model.templateFields as |templateField|}}
               <li>
-                  <label for="{{templateField.field.fieldName}}">{{templateField.field.fieldName}} {{templateField.field.id}}</label>
+                  <label for="{{templateField.field.fieldName}}">{{templateField.field.fieldName}}</label>
 
                 {{#if (eq templateField.field.id '4')}}
                   {{input type="checkbox" name=templateField.field.fieldname}}
                 {{else}}
-                  {{input type="text" name=templateField.field.fieldName }}
+                  <div class="we-col s1 m1 l1" style="float:right">
+                  {{input type="text" name=templateField.field.fieldName }} {{templateField.field.id}}
+                  </div>
                 {{/if}}
               </li>
 
@@ -27,6 +29,7 @@
 
         </ul>
 
+    </div>
     </div>
     <div class="w3-col s3 m3 l3">
       {{#link-to 'template-show.send-template'}}<button class="w3-btn">Send Template</button>{{/link-to}}
