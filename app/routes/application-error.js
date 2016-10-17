@@ -13,6 +13,6 @@ export default Ember.Route.extend({
     //   controller.set('title', title);
     // }
     this._super(controller, error);
-    {{debugger}}
+    // {{debugger}}
   }
 });
