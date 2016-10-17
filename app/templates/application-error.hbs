@@ -1,21 +1,27 @@
 <h1>Application Error</h1>
 
-<h3>Title: {{title}}</h3>
+<h4>{{title}}</h4>
+
+{{#each model.errors as |error|}}
+  <p>{{error.title}}</p>
+  <p>Error Status: {{error.status}}</p>
+{{/each}}
 
 <p>Name: {{model.name}}</p>
+
+<p>Message: {{model.message}}</p>
 
 <p>Stack: {{model.stack}}</p>
 
 <p>Adapter Error?: {{model.isAdapterError}}</p>
 
-
-<p><strong>Below Not Working</strong></p>
-<p>Error Code: {{model.code}}</p>
+{{!-- Below formatted for JSON API error response --}}
+{{!-- <p>Error Code: {{model.code}}</p>
 <p>ID: {{model.id}}</p>
 <p>About: {{model.links.about}}</p>
 <p>Status: {{model.status}}</p>
 <p>Code: {{model.code}}</p>
 <p>Pointer: {{model.source.pointer}}</p>
 <p>Parameter: {{model.source.parameter}}</p>
-<p>Meta: {{model.meta}}</p>
+<p>Meta: {{model.meta}}</p> --}}
 
