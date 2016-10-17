@@ -1,79 +1,47 @@
 import Ember from 'ember';
 
-const UserFieldnameParserComponent = Ember.Component.extend({
-// export default Ember.Component.extend({
-//   finalFieldNameValue: null,
-//
-  user: Ember.computed('params.[]', function() {
+export default Ember.Component.extend({
 
-    var user = this.get('params')[0];
-    console.log("User in computed param: " + user);
-    return user;
-  }),
+  store: Ember.inject.service('store'),
 
-  // model(params) {
-  //   this.get('store').find('user', params[0].id);
-  //   // this.get('store').find('user', 27);
-  // },
-//
-  field: Ember.computed('params.[]', function(){
-    return this.get('params')[1];
-  }),
-//   // didInsertElement() {
-//   //   this._super(...arguments);
-//   //   var field = this.get('field');
-//   //   var user = this.get('model');
-//   //   switch(field) {
-//   //     case 'First Name':
-//   //       this.set('finalFieldNameValue', user.firstName);
-//   //       break;
-//   //
-//   // }
-  didUpdateAttrs() {
+  field: null,
+
+  willRender() {
     this._super(...arguments);
-    var field = this.get('field');
-    var user = this.get('user');
-    console.log(user);
-    switch(field) {
+    this.field = this.get('field');
+
+    switch(this.field) {
       case 'First Name':
-        this.set('finalFieldNameValue', user);
+        this.set('finalFieldNameValue', 'firstName');
         break;
       case 'Middle Name':
-        this.set('finalFieldNameValue', 'Hrhe');
+        this.set('finalFieldNameValue', 'middleName');
         break;
       case 'Last Name':
-        this.set('finalFieldNameValue', 'NLsdrjh');
+        this.set('finalFieldNameValue', 'lastName');
         break;
       case 'Gender':
-        this.set('finalFieldNameValue', 'Fbjenf');
+        this.set('finalFieldNameValue', 'gender');
         break;
       case 'Last 4 Of SSN':
-        this.set('finalFieldNameValue', '9999');
+        this.set('finalFieldNameValue', 'ssn');
         break;
       case 'Address Line One':
-        this.set('finalFieldNameValue', user);
+        this.set('finalFieldNameValue', "addressLineOne");
         break;
       case 'Address Line Two':
-        this.set('finalFieldNameValue', 'jkfkjsdnf');
+        this.set('finalFieldNameValue', 'addressLineTwo');
         break;
       case 'Zip Code':
-        this.set('finalFieldNameValue', '93923');
+        this.set('finalFieldNameValue', 'zipCode');
         break;
       case 'City':
-        this.set('finalFieldNameValue', 'CHuenrn');
+        this.set('finalFieldNameValue', 'city');
         break;
       case 'State':
-        this.set('finalFieldNameValue', 'JJ');
+        this.set('finalFieldNameValue', 'state');
         break;
     }
 
   }
 });
-//
-UserFieldnameParserComponent.reopenClass({
-  positionalParams: 'params'
-});
-
-
-// });
-export default UserFieldnameParserComponent;
