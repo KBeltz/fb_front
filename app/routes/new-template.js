@@ -5,11 +5,11 @@ export default Ember.Route.extend({
     return this.store.createRecord('template');
     // return {};
   },
-  
+
   actions: {
-    createTemplate(data) {
-      var template = this.get('model');
-      console.log("template.templateName: " + data.get('templateName'))
-    }
-  }
+
+
+  },
+
+
 });

@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  // selectedFields: Ember.A([]),
+  store: Ember.inject.service(),
+
   classNames: ['draggable-dropzone'],
   classNameBindings: ['dragClass'],
   dragClass: 'deactivated',
@@ -13,13 +16,9 @@ export default Ember.Component.extend({
     return this.set('dragClass', 'activated');
   },
   drop(event) {
-    var data;
     this.set('dragClass', 'deactivated');
-    data = event.dataTransfer.getData('text/data');
-    event.target.appendChild(document.getElementById(data));
-    this.set('dropCounter', this.get('dropCounter') + 1);
+    var fieldId = event.dataTransfer.getData('text/data');
+    this.get('addField')(fieldId);
   },
-  
-  dropCounter: 0
-  
+
 });
