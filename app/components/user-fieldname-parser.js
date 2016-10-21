@@ -6,10 +6,13 @@ export default Ember.Component.extend({
 
   field: null,
 
+  model() {
+    return this.get('store').createRecord('submission', {});
+  },
+
   willRender() {
     this._super(...arguments);
-    this.field = this.get('field');
-
+    this.field = this.get('field.fieldName');
     switch(this.field) {
       case 'First Name':
         this.set('finalFieldNameValue', 'firstName');
