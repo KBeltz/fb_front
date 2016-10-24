@@ -3,6 +3,8 @@
   "dependencies": {
     "ember": "~2.8.0",
     "ember-cli-shims": "0.1.1",
-    "ember-qunit-notifications": "0.1.0"
+    "ember-qunit-notifications": "0.1.0",
+    "jSignature": "2.0.2",
+    "chartjs": "2.1.6"
   }
 }

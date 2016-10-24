@@ -51,3 +51,7 @@ Specify what it takes to deploy your app.
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
+## addons installed
+* ember-truth-helpers => https://github.com/jmurphyau/ember-truth-helpers
+* ember-progress-bar => https://github.com/null-null-null/ember-progress-bar
+* ember-tooltips => https://github.com/sir-dunxalot/ember-tooltips
