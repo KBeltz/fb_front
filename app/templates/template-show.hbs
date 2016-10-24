@@ -1,12 +1,32 @@
-<h4>Template Show</h4>
+<!--<h5>Template Show page here</h5>-->
 
 <div class="w3-row">
-    <div class="w3-col s9 m9 l9">
-      {{model.templateName}}
+
+    <div class="white_background w3-card-2 w3-col s7 m7 l7">
+        <h3 class="w3-margin-left w3-margin-top negative-margin-bottom-10"><span>{{model.templateName}}</span></h3>
+        <hr>
+        <ul style="list-style:none">
+          {{#each model.templateFields as |templateField|}}
+
+                  <li class=" w3-col s4 m4 l4 ">
+                  <label  class="float-right w3-padding-16" for="{{templateField.field.fieldName}}">{{templateField.field.fieldName}}</label>
+                  </li>
+                <li class=" w3-col s8 m8 l8">
+                {{input type="text" name=templateField.field.fieldName }}
+                </li>
+
+
+          {{/each}}
+
+        </ul>
+
     </div>
-    <div class="w3-col s3 m3 l3">
-        {{#link-to 'template-show.send-template'}}<button class="w3-btn">Send Template</button>{{/link-to}}
+
+    <div class="w3-col s5 m5 l5">
+      {{#link-to 'template-show.send-template'}}<button class="w3-btn w3-dark-grey btn-1 margin-left-40">Send Template</button>{{/link-to}}
+
+      {{outlet}}
     </div>
 </div>
 
-<div class="w3-row">{{outlet}}</div>
+<div class="w3-row"></div>
