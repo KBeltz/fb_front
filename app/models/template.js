@@ -5,7 +5,8 @@ export default DS.Model.extend({
   // updateBy: DS.attr('number'),
   // updateTime: DS.attr('date'),
   // insertTime: DS.attr('date'),
+  insertBy: DS.belongsTo('user'),
   forms: DS.hasMany('form'),
   templateFields: DS.hasMany('template-field'),
-  user: DS.belongsTo('user')
+  // user: DS.belongsTo('user')
 });

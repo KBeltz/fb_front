@@ -26,35 +26,63 @@ export default Ember.Component.extend({
       //   // on rejection
       // });
 
+      var _this = this;
 
-      // var user = this.get('store').find('user', 27).then(function(userData) {
-      //   template.set('user', userData);
-      //   template.save();
-      //
-      // });
+      var user = this.get('store').find('user', 27).then(function(userData) {
+        setTimeout(function() {
+          EmberInspector.inspect(userData);
+          template.set('insertBy', userData);
+          // template.set('createdBy', userData);
+          // template.set('user', userData);
+          template.save().then(function(templateData) {
+            _this.get('store').findAll('field').then(function(fieldsData) {
+              var allTemplateFields = Ember.A([]);
+              fieldsData.forEach(function(field, index) {
+                var templateField = _this.get('store').createRecord('templateField', {
+                  indexNumber: index,
+                  field: field,
+                  template: template
+                });
+                allTemplateFields.push(templateField);
+              });
+              template.set('templateFields', allTemplateFields);
+              template.save();
+            });
+          });
+        }, 1500);
+
+      });
       var now = new Date();
 
-      var user = this.get('store').createRecord('user', {
-        firstName: 'John',
-        lastName: 'Johnson',
-        middleName: 'Joe',
-        gender: 'MALE',
-        addressLineOne: '123 JJJ Place',
-        addressLineTwo: '',
-        unitNumber: '',
-        state: 'NE',
-        city: 'Omaha',
-        zipCode: '68104',
-        birthdate: now,
-        personalPhone: '4025555555',
-        ssn: '123456789',
-      });
-      var form = this.get('store').findRecord('form', 1);
-      user.
-      user.save();
 
-      // console.log("user: " + user);
-      // EmberInspector.inspect(user);
+
+
+      // var user = this.get('store').createRecord('user', {
+      //   firstName: 'John',
+      //   lastName: 'Johnson',
+      //   middleName: 'Joe',
+      //   gender: 'MALE',
+      //   addressLineOne: '123 JJJ Place',
+      //   addressLineTwo: '',
+      //   unitNumber: '',
+      //   state: 'NE',
+      //   city: 'Omaha',
+      //   zipCode: '68104',
+      //   birthdate: now,
+      //   personalPhone: '4025555555',
+      //   ssn: '123456789',
+      // });
+      // user.save();
+
+      // this.get('store').findRecord('form', 1).then(function(form) {
+      //
+      //   user.get('forms').pushObject(form);
+      //   setTimeout(function() {
+      //
+      //     user.save();
+      //   }, 3000);
+      //
+      // });
     },
 
     addFieldToTemplate(fieldId) {
