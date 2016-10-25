@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+
+  submissionMaker: Ember.inject.service(),
+
   renderTemplate() {
     this.render('user-forms-index.user-forms-show', { into: 'application' });
   },
@@ -11,19 +14,15 @@ export default Ember.Route.extend({
 
   actions: {
     saveSubmissions(form) {
+      var user = form.get('recipientUser');
+      var templateFields = form.get('template').get('templateFields');
+      var submissionMaker = this.get('submissionMaker');
+      templateFields.forEach(function(templateField) {
+        submissionMaker.generateSubmission(templateField.get('field'), user, form);
+      });
       form.set('isComplete', 'Y');
       form.save();
       this.transitionTo('user-forms');
-      // var field = this.get('model.field');
-      // var text = this.get('finalFieldNameValue');
-      // this.get('store').createRecord('submission', {
-      //   field: field,
-      //   form: form,
-      //   submissionText: text
-      // }).save();
-      // return form.updateRecord('form', form, {
-      //   isComplete: 'Y'
-      // }).save();
     }
   }
 });
