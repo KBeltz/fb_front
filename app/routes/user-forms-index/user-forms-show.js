@@ -13,23 +13,16 @@ export default Ember.Route.extend({
   // },
 
   actions: {
-    saveSubmissions(field, user, form) {
-      this.get('submissionMaker').generateSubmission(field, user, form);
+    saveSubmissions(form) {
+      var user = form.get('recipientUser');
+      var templateFields = form.get('template').get('templateFields');
+      var submissionMaker = this.get('submissionMaker');
+      templateFields.forEach(function(templateField) {
+        submissionMaker.generateSubmission(templateField.get('field'), user, form);
+      });
       form.set('isComplete', 'Y');
       form.save();
-      this.transitionTo('user-forms-index');
-      // var field = this.get('model.field');
-      // var text = this.get('finalFieldNameValue');
-      // this.get('store').createRecord('submission', {
-      //   field: field,
-      //   form: form,
-      //   submissionText: text
-      // }).save();
-      // return form.updateRecord('form', form, {
-      //   isComplete: 'Y'
-      // }).save();
+      this.transitionTo('user-forms');
     }
   }
 });
-// TODO Need to do WillRender with user and form
-// TODO Iterate over form fields

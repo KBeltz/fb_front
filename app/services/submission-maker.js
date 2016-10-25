@@ -13,40 +13,41 @@ export default Ember.Service.extend({
     var userAttribute = null;
     switch(fieldName) {
       case 'First Name':
-        userAttribute = user.firstName;
+        userAttribute = user.get('firstName');
         break;
       case 'Middle Name':
-        this.set('finalFieldNameValue', 'middleName');
+        userAttribute = user.get('middleName');
         break;
       case 'Last Name':
-        this.set('finalFieldNameValue', 'lastName');
+        userAttribute = user.get('lastName');
         break;
       case 'Gender':
-        this.set('finalFieldNameValue', 'gender');
+        userAttribute = user.get('gender');
         break;
       case 'Last 4 Of SSN':
-        this.set('finalFieldNameValue', 'ssn');
+        userAttribute = user.get('ssn');
         break;
       case 'Address Line One':
-        this.set('finalFieldNameValue', "addressLineOne");
+        userAttribute = user.get('addressLineOne');
         break;
       case 'Address Line Two':
-        this.set('finalFieldNameValue', 'addressLineTwo');
+        userAttribute = user.get('addressLineTwo');
         break;
       case 'Zip Code':
-        this.set('finalFieldNameValue', 'zipCode');
+        userAttribute = user.get('zipCode');
         break;
       case 'City':
-        this.set('finalFieldNameValue', 'city');
+        userAttribute = user.get('city');
         break;
       case 'State':
-        this.set('finalFieldNameValue', 'state');
+        userAttribute = user.get('state');
         break;
     }
-    return this.get('store').createRecord('submission', {
-      form: form,
-      field: field,
-      submissionText: userAttribute
-    });
+
+    var submission = this.get('store').createRecord('submission');
+    submission.set('form', form);
+    submission.set('field', field);
+    submission.set('submissionText', userAttribute);
+    submission.save();
   }
 });
