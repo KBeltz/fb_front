@@ -30,7 +30,6 @@ export default Ember.Component.extend({
 
       var user = this.get('store').find('user', 27).then(function(userData) {
         setTimeout(function() {
-          EmberInspector.inspect(userData);
           template.set('insertBy', userData);
           // template.set('createdBy', userData);
           // template.set('user', userData);
