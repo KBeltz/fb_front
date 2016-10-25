@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+
+  submissionMaker: Ember.inject.service(),
+
   renderTemplate() {
     this.render('user-forms-index.user-forms-show', { into: 'application' });
   },
@@ -10,10 +13,11 @@ export default Ember.Route.extend({
   // },
 
   actions: {
-    saveSubmissions(form) {
+    saveSubmissions(field, user, form) {
+      this.get('submissionMaker').generateSubmission(field, user, form);
       form.set('isComplete', 'Y');
       form.save();
-      this.transitionTo('user-forms');
+      this.transitionTo('user-forms-index');
       // var field = this.get('model.field');
       // var text = this.get('finalFieldNameValue');
       // this.get('store').createRecord('submission', {
@@ -27,3 +31,5 @@ export default Ember.Route.extend({
     }
   }
 });
+// TODO Need to do WillRender with user and form
+// TODO Iterate over form fields
