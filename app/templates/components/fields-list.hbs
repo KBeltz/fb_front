@@ -3,7 +3,9 @@
 
   <ul>
   {{#each fields as |field|}}
-      <li>{{field.fieldName}}</li>
+    {{#field-drag-drop content=field.id}}
+      <li class="field-list-item">{{field.fieldName}}</li>
+    {{/field-drag-drop}}
   {{/each}}
   </ul>
 </article>

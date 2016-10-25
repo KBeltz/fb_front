@@ -1,0 +1,31 @@
+<div class="w3-row">
+  <div class="w3-col l4">
+    <h4>New Template</h4>
+  </div>
+</div>
+
+<div class="w3-row">
+  <div class="w3-col l4">
+
+    {{#fields-list}}
+
+    {{/fields-list}}
+
+  </div>
+  <div class="w3-col l8">
+
+    <h4>Template</h4>
+    <br>
+    {{#field-drag-drop-zone selectedFields=model.templateFields addField=(action "addFieldToTemplate")}}
+
+    {{/field-drag-drop-zone}}
+    <br>
+    <br>
+    <br>
+
+
+    <label for="templateName">Template Name (required): </label>{{input value=model.templateName min="3" maxlength="50" required="true" name="templateName" type="text"}}
+    <button {{action 'createTemplate' model}}>Save Template</button>
+
+  </div>
+</div>

@@ -1,3 +1,29 @@
+/* for drag and drop from ember.js cookbook */
+
+.draggable-dropzone {
+  border: 1px solid black;
+/*  width: 200px;
+  height: 200px;*/
+}
+
+.activated {
+  border: 4px solid red;
+}
+
+.field-list-item {
+  list-style: none;
+  border: 1px solid green;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+/*.kitten-img {
+  height: 150px;
+  width: 175px;
+}*/
+
+/* end drag and drop */
+
 .white_background{
   background-color: white;
 }
