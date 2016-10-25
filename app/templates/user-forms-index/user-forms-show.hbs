@@ -1,3 +1,12 @@
 <h4>Form to Fill Out</h4>
 
-<b>{{model.template.templateName}}</b> {{model.user.firstName}} {{model.user.lastName}}
+<b>{{model.template.templateName}}</b> {{model.recipientUser.firstName}} {{model.recipientUser.lastName}}
+
+<form>
+    <ul>
+      {{#each model.template.templateFields as |templateField|}}
+          <li>{{templateField.field.fieldName}} - {{user-fieldname-parser user=model.recipientUser field=templateField.field}}</li>
+      {{/each}}
+    </ul>
+    <button class="w3-btn" {{action "saveSubmissions" model}}>Submit Form</button>
+</form>

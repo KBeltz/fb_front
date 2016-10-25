@@ -9,5 +9,5 @@ export default DS.Model.extend({
   // insertTime: DS.attr('date'),
   submissions: DS.hasMany('submission'),
   template: DS.belongsTo('template'),
-  user: DS.belongsTo('user')
+  recipientUser: DS.belongsTo('user')
 });
