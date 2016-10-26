@@ -21,6 +21,7 @@ export default Ember.Route.extend({
         submissionMaker.generateSubmission(templateField.get('field'), user, form);
       });
       form.set('isComplete', 'Y');
+      form.set('dateFilledOut', new Date());
       form.save();
       this.transitionTo('user-forms');
     }
