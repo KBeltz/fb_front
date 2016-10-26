@@ -27,6 +27,9 @@
 .white_background{
   background-color: white;
 }
+.white-text{
+  color:white;
+}
 .margin-left-40{
 margin-left: 40px;
 }
@@ -39,3 +42,11 @@ margin-left: 40px;
 .float-left{
   float:left;
 }
+
+#main_container{
+  background:white;
+}
+#all_wrapper, #left_navigation{
+  background:#ececec;
+}
+
