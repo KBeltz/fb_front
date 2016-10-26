@@ -17,7 +17,7 @@ App = Ember.Application.extend({
 // Global error handlers written by Chris Foral on 10-12-16
 // Global error handler in Ember Run Loop
 Ember.onerror = function (error) {
-  console.log('Ember.onerror handler', error.message);
+  console.log('Ember.onerror handler', error);
 };
 
 // Global error handler for promises
