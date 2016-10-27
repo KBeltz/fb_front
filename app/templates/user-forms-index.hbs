@@ -1,11 +1,17 @@
-<h4>List of Uncompleted Forms</h4>
+<div class="profile_panel fb_blue-border">
+    <div class="profile_panel_header fb_blue-background white-text">
+        <h1>List of Uncompleted Forms</h1><br><br>
+    </div>
+    <div class="profile_panel_content">
 
-<ul>
-    {{#each model.form as |form|}}
-      {{#link-to 'user-forms-index.user-forms-show' form}}
-        <li>{{form.template.templateName}}</li>
-      {{/link-to}}
-    {{/each}}
-</ul>
+        <ul class="no-list-style">
+          {{#each model.form as |form|}}
+            {{#link-to 'user-forms-index.user-forms-show' form}}
+                <li>{{form.template.templateName}}</li>
+            {{/link-to}}
+          {{/each}}
+        </ul>
+    </div>
+</div>
 
 {{outlet}}

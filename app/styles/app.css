@@ -42,6 +42,10 @@ margin-left: 40px;
 .float-left{
   float:left;
 }
+.no-list-style{
+  list-style-type: none;
+}
+
 
 #main_container{
   background:white;
@@ -54,4 +58,13 @@ margin-left: 40px;
 }
 .fb_blue-text{
   color: #0b9cbd;
+}
+.fb_blue-border{
+  border:solid 1px #0b9cbd;
+}
+.card-220px-height{
+  height:220px;
+}
+a:hover{
+  color:#0b9cbd;
 }

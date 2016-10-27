@@ -1,11 +1,16 @@
-<h4>Literally Just Templates</h4>
-{{#each model as |template|}}
-    <ul>
-        <li style="list-style:none">
-          {{#link-to 'template-show' template}}
-            {{template.templateName}}
-          {{/link-to}}
-        </li>
-    </ul>
-{{/each}}
-
+<div class="profile_panel fb_blue-border">
+    <div class="profile_panel_header fb_blue-background white-text">
+        <h1>Literally Just Templates</h1><br><br>
+    </div>
+    <div class="profile_panel_content">
+      {{#each model as |template|}}
+          <ul>
+              <li style="list-style:none">
+                {{#link-to 'template-show' template}}
+                  {{template.templateName}}
+                {{/link-to}}
+              </li>
+          </ul>
+      {{/each}}
+    </div>
+</div>
