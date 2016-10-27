@@ -33,9 +33,13 @@
 .margin-left-40{
 margin-left: 40px;
 }
+.margin-20px{
+  margin:20px;
+}
 .negative-margin-bottom-10{
   margin-bottom:-10px;
 }
+
 .float-right{
   float:right;
 }
@@ -67,4 +71,14 @@ margin-left: 40px;
 }
 a:hover{
   color:#0b9cbd;
+}
+.button-green{
+  background: #339933;
+  color: #white;
+  border-radius: 2px;
+  padding: 5px 10px;
+}
+note{
+  font-size:16px;
+  font-style: italic;
 }
