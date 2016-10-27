@@ -49,4 +49,9 @@ margin-left: 40px;
 #all_wrapper, #left_navigation{
   background:#ececec;
 }
-
+.fb_blue-background{
+  background: #0b9cbd;
+}
+.fb_blue-text{
+  color: #0b9cbd;
+}
