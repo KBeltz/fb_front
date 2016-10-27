@@ -1,13 +1,8 @@
 <div class="w3-row">
   <div class="w3-col l4">
-    <h4>New Template</h4>
-  </div>
-</div>
+    <h4>Field List</h4>
 
-<div class="w3-row">
-  <div class="w3-col l4">
-
-    {{#fields-list}}
+    {{#fields-list availableFieldsList=availableFieldsList}}
 
     {{/fields-list}}
 
@@ -15,17 +10,23 @@
   <div class="w3-col l8">
 
     <h4>Template</h4>
-    <br>
-    {{#field-drag-drop-zone selectedFields=model.templateFields addField=(action "addFieldToTemplate")}}
+
+    {{#field-drag-drop-zone selectedFields=template.templateFields addFieldToTemplate=(action "addFieldToTemplate") removeFieldFromFieldsList=(action "removeFieldFromFieldsList") removeField=(action "reAddFieldToList")}}
 
     {{/field-drag-drop-zone}}
-    <br>
-    <br>
-    <br>
 
+  </div>
+</div>
 
-    <label for="templateName">Template Name (required): </label>{{input value=model.templateName min="3" maxlength="50" required="true" name="templateName" type="text"}}
-    <button {{action 'createTemplate' model}}>Save Template</button>
+<div class="w3-row">
+  <div class="w3-col l4">
+    <p></p>
+  </div>
+
+  <div class="w3-col l8">
+
+    <label for="templateName">Template Name (required): </label>{{input value=template.templateName min="3" maxlength="50" required="true" name="templateName" type="text"}}
+    <button {{action 'createTemplate' template user}}>Save Template</button>
 
   </div>
 </div>
