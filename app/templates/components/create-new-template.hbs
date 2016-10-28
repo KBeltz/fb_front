@@ -2,7 +2,7 @@
   <div class="w3-col l4">
     <h4>Field List</h4>
 
-    {{#fields-list availableFieldsList=availableFieldsList}}
+    {{#fields-list sortedFieldsList=sortedFieldsList}}
 
     {{/fields-list}}
 
@@ -11,7 +11,7 @@
 
     <h4>Template</h4>
 
-    {{#field-drag-drop-zone selectedFields=template.templateFields addFieldToTemplate=(action "addFieldToTemplate") removeFieldFromFieldsList=(action "removeFieldFromFieldsList") removeField=(action "reAddFieldToList")}}
+    {{#field-drag-drop-zone selectedFields=template.templateFields addTemplateFieldToTemplate=(action "addTemplateFieldToTemplate") removeFieldFromFieldsList=(action "removeFieldFromFieldsList") removeTemplateFieldFromTemplate=(action "removeTemplateFieldFromTemplate")}}
 
     {{/field-drag-drop-zone}}
 

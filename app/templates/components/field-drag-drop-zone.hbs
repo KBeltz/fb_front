@@ -1,5 +1,5 @@
 <ul class="selected-fields-list">
   {{#each selectedFields as |templateField|}}
-    <li>{{templateField.field.fieldName}} <button {{action removeField}}>X</button></li>
+    <li>{{templateField.field.fieldName}} <button {{action removeTemplateFieldFromTemplate templateField}}>x</button></li>
   {{/each}}
 </ul>

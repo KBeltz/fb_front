@@ -4,6 +4,10 @@ export default Ember.Component.extend({
 
   orderNumber: 0,
 
+  sortedFieldsList: Ember.computed.sort('availableFieldsList', 'sortDefinition'),
+  sortDefinition: ['id:desc'],
+
+
   store: Ember.inject.service('store'),
 
   actions: {
@@ -22,7 +26,7 @@ export default Ember.Component.extend({
       this.transitionTo('users');
     },
 
-    addFieldToTemplate(fieldId) {
+    addTemplateFieldToTemplate(fieldId) {
       var orderNumber = this.set('orderNumber', this.get('orderNumber') +1);
       var template = this.get('template');
       var field = this.get('store').peekRecord('field', fieldId);
@@ -33,11 +37,17 @@ export default Ember.Component.extend({
       });
     },
 
+    removeTemplateFieldFromTemplate(templateField) {
+      var templateFields = this.get('template').get('templateFields');
+      templateFields.removeObject(templateField);
+      var fieldId = templateField.get('field').get('id');
+      var sortedFieldsList = this.get('sortedFieldsList');
+      var fieldToAdd = this.get('store').peekRecord('field', fieldId);
+      sortedFieldsList.addObject(fieldToAdd);
+    },
+
     removeFieldFromFieldsList(fieldId) {
-      var availableFieldsList = this.get('availableFieldsList');
-
-      //SKY IS WORKING ON THIS, SO DON'T REMOVE IT -10/27
-
+      var sortedFieldsList = this.get('sortedFieldsList');
       // var fieldToDisable = availableFieldsList.get('field', fieldId);
 
       // set(fieldToDisable, 'selectable', false);
@@ -48,13 +58,14 @@ export default Ember.Component.extend({
       // }, availableFieldsList)
       // EmberInspector.inspect(fieldToDisable);
       var fieldToRemove = this.get('store').peekRecord('field', fieldId);
-      availableFieldsList.removeObject(fieldToRemove);
-
-
+      sortedFieldsList.removeObject(fieldToRemove);
     },
 
-    reAddFieldToList() {
-      console.log("I would have reappeared in the list!");
-    }
+    // addFieldToFieldsList(fieldId) {
+    //   console.log("Field with ID " + fieldId + " would have reappeared in the list!");
+    //   var availableFieldsList = this.get('availableFieldsList');
+    //   var fieldToAdd = this.get('store').peekRecord('field', fieldId);
+    //   availableFieldsList.addObject(fieldToAdd);
+    // }
   }
 });
