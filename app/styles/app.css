@@ -7,15 +7,6 @@
   height: 200px;*/
 /*}*/
 
-.draggable-dropzone {
-  border: 1px solid black;
-  padding: 3px;
-  margin: 3px;
-  border-radius: 5px;
-  min-height: 100px;
-}
-
-
 .activated {
   border: 4px solid red;
 }
@@ -35,19 +26,13 @@
   margin-bottom: 5px;
   background: #f7f5f5;
   border: 1px solid #aba7a7;
+  border-radius: 5px;
 }
 
 .fields-list {
   margin: 0px;
 }
 
-.field-list-item {
-  list-style: none;
-  border: 1px solid green;
-  padding: 3px;
-  margin: 3px;
-  border-radius: 5px;
-}
 .field-list-item:hover{
   background: rgba(49, 170, 189, 0.06);
   border: 1px solid #0b9cbd;
@@ -125,9 +110,7 @@ note{
 .min-height-220{
   min-height: 220px;
 }
-.gray-text{
-  color: #8c8c8c;
-}
+
 
 /*-----------------------------
    Custom Ordered List
