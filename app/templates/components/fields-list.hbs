@@ -1,17 +1,9 @@
 <article>
-<<<<<<< HEAD
-  <h3>Field List</h3>
 
-  <ul class="no-list-style">
-  {{#each fields as |field|}}
-    {{#field-drag-drop content=field.id}}
-      <li class="field-list-item">{{field.fieldName}}</li>
-=======
   <ul class="fields-list">
   {{#each availableFieldsList as |field|}}
     {{#field-drag-drop content=field.id field=field}}
 
->>>>>>> c3abf02bfab415ec62a0173ba891dd5b383a11a9
     {{/field-drag-drop}}
   {{/each}}
   </ul>
