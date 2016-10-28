@@ -35,7 +35,7 @@
   margin-bottom: 5px;
   background: #f7f5f5;
   border: 1px solid #aba7a7;
-=======
+}
 
 .fields-list {
   margin: 0px;
@@ -46,7 +46,6 @@
   border: 1px solid green;
   padding: 3px;
   margin: 3px;
->>>>>>> c3abf02bfab415ec62a0173ba891dd5b383a11a9
   border-radius: 5px;
 }
 .field-list-item:hover{
