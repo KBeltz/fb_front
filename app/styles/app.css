@@ -20,6 +20,7 @@
   background: #f7f5f5;
   border: 1px solid #aba7a7;
   border-radius: 5px;
+  width: 80%;
 }
 .field-list-item {
   padding: 10px;
@@ -110,7 +111,10 @@ note{
 .min-height-220{
   min-height: 220px;
 }
-
+.alert-button{
+  background-color:#CB172B;
+  color: white;
+}
 
 /*-----------------------------
    Custom Ordered List
