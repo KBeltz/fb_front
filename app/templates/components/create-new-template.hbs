@@ -7,29 +7,26 @@
 
 
         <div class="w3-row">
-            <div class="w3-col l4">
+            <div class="w3-col s3 m3 l3 ">
 
               {{#fields-list}}
 
               {{/fields-list}}
 
             </div>
-            <div class="w3-col l8">
+            <div class="white_background w3-card-2 w3-col s8 m8 l8 margin-left-40 min-height-220">
+                <h3 class="w3-margin-left w3-margin-top negative-margin-bottom-10"><span>
+                    <label for="templateName">Template Name <span class="red-text"> *</span>: </label></span>{{input value=model.templateName min="3" maxlength="50" required="true" name="templateName" type="text"}}
+                </h3>
+                <button class="float-right negative-margin-top-30 margin-right-20" {{action 'createTemplate' model}}>Save Template</button>
 
-                <h4>Template</h4>
-                <br>
+                <hr>
+
               {{#field-drag-drop-zone selectedFields=model.templateFields addField=(action "addFieldToTemplate")}}
-
+                <note class="gray-text">&#160; &#160; Drop here</note>
               {{/field-drag-drop-zone}}
-                <br>
-                <br>
-                <br>
-
-
-                <label for="templateName">Template Name (required): </label>{{input value=model.templateName min="3" maxlength="50" required="true" name="templateName" type="text"}}
-                <button {{action 'createTemplate' model}}>Save Template</button>
-
             </div>
+
         </div>
     </div>
 </div>

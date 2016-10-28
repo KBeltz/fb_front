@@ -1,7 +1,7 @@
 <article>
-  <strong>Field List</strong>
+  <h3>Field List</h3>
 
-  <ul>
+  <ul class="no-list-style">
   {{#each fields as |field|}}
     {{#field-drag-drop content=field.id}}
       <li class="field-list-item">{{field.fieldName}}</li>

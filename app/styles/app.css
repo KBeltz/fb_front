@@ -1,20 +1,34 @@
 /* for drag and drop from ember.js cookbook */
 
-.draggable-dropzone {
-  border: 1px solid black;
+/*.draggable-dropzone {*/
+  /*border: 1px solid black;*/
 /*  width: 200px;
   height: 200px;*/
-}
+/*}*/
 
 .activated {
   border: 4px solid red;
 }
-
-.field-list-item {
-  list-style: none;
-  border: 1px solid green;
-  padding: 3px;
+.red-text{
+  color:#CB172B;
+}
+.selected-fields-list li{
+  padding: 10px;
+  margin-bottom: 5px;
+  background: #f7f5f5;
+  border: 1px solid #aba7a7;
   border-radius: 5px;
+}
+.field-list-item {
+  padding: 10px;
+  margin-bottom: 5px;
+  background: #f7f5f5;
+  border: 1px solid #aba7a7;
+  border-radius: 5px;
+}
+.field-list-item:hover{
+  background: rgba(49, 170, 189, 0.06);
+  border: 1px solid #0b9cbd;
 }
 
 /*.kitten-img {
@@ -48,8 +62,15 @@ margin-left: 40px;
 }
 .no-list-style{
   list-style-type: none;
+  margin: 0px;
+  padding: 0px;
 }
-
+.negative-margin-top-30{
+  margin-top:-30px;
+}
+.margin-right-20{
+  margin-right:20px;
+}
 
 #main_container{
   background:white;
@@ -82,3 +103,49 @@ note{
   font-size:16px;
   font-style: italic;
 }
+.min-height-220{
+  min-height: 220px;
+}
+.gray-text{
+  color: #8c8c8c;
+}
+
+
+ol {
+  counter-reset:li; /* Initiate a counter */
+  margin-left:0; /* Remove the default left margin */
+  padding-left:0; /* Remove the default left padding */
+}
+ol > li {
+  position:relative; /* Create a positioning context */
+  margin:0 0 6px 2em; /* Give each list item a left margin to make room for the numbers */
+  padding:4px 8px; /* Add some spacing around the content */
+  list-style:none; /* Disable the normal item numbering */
+  border-top:2px solid #666;
+  background:#f6f6f6;
+}
+ol > li:before {
+  content:counter(li); /* Use the counter as content */
+  counter-increment:li; /* Increment the counter by 1 */
+  /* Position and style the number */
+  position:absolute;
+  top:-2px;
+  left:-2em;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  width:2em;
+  /* Some space between the number and the content in browsers that support
+       generated content but not positioning it (Camino 2 is one example) */
+  margin-right:8px;
+  padding:4px;
+  border-top:2px solid #666;
+  color:#fff;
+  background:#666;
+  font-weight:bold;
+  font-family:"Helvetica Neue", Arial, sans-serif;
+  text-align:center;
+}
+li ol,
+li ul {margin-top:6px;}
+ol ol li:last-child {margin-bottom:0;}
