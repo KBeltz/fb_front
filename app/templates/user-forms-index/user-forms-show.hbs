@@ -1,12 +1,32 @@
-<h4>Form to Fill Out</h4>
+<div class="w3-row">
 
-<b>{{model.template.templateName}}</b> {{model.recipientUser.firstName}} {{model.recipientUser.lastName}}
+    <div class="white_background w3-card-2 w3-col s8 m8 l8">
+        <h3 class="w3-margin-left w3-margin-top negative-margin-bottom-10">{{model.template.templateName}}
+            <br> <note >for <b>{{model.recipientUser.firstName}} {{model.recipientUser.lastName}}</b>  to fill out. </note></h3>
+        <hr>
+        <form>
+        <ul style="list-style:none">
+          {{#each model.template.templateFields as |templateField|}}
 
-<form>
-    <ul>
-      {{#each model.template.templateFields as |templateField|}}
-          <li>{{templateField.field.fieldName}} - {{user-fieldname-parser user=model.recipientUser field=templateField.field}}</li>
-      {{/each}}
-    </ul>
-    <button class="w3-btn" {{action "saveSubmissions" model}}>Submit Form</button>
-</form>
+              <li class=" w3-col s4 m4 l4 ">
+                  <label  class="float-right w3-padding-16" for="{{templateField.field.fieldName}}">{{templateField.field.fieldName}}</label>
+              </li>
+              <li class=" w3-col s8 m8 l8">
+                 {{user-fieldname-parser user=model.recipientUser field=templateField.field}}
+              </li>
+
+
+          {{/each}}
+
+        </ul>
+          <div class="w3-col s12 m12 l12">
+            <button class="button-green float-right margin-20px" {{action "saveSubmissions" model}}>Submit Form</button>
+          </div>
+
+        </form>
+
+    </div>
+
+    <div class="w3-col s4 m4 l4">
+        </div>
+    </div>

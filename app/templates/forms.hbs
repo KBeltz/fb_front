@@ -1,10 +1,18 @@
-<h4>Completed Forms</h4>
-{{#each model as |form|}}
-    <ul>
-        <li style="list-style:none">
-          {{#link-to 'form' form}}
-            {{form.template.templateName}}: {{form.user.firstName}} {{form.user.lastName}}, {{form.dateFilledOut}}
-          {{/link-to}}
-        </li>
-    </ul>
-{{/each}}
+<div class="profile_panel fb_blue-border">
+    <div class="profile_panel_header fb_blue-background white-text">
+        <h1>Completed Forms</h1><br><br>
+    </div>
+    <div class="profile_panel_content">
+
+      {{#each model as |form|}}
+      <ul class="no-list-style">
+                {{#link-to 'form' form}}
+                    <li><b> {{form.template.templateName}}</b></li>
+                    <li>{{form.user.firstName}} {{form.user.lastName}} </li>
+                    <li>{{form.dateFilledOut}}</li>
+                {{/link-to}}
+      </ul>
+      {{/each}}
+
+    </div>
+</div>
