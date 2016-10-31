@@ -115,7 +115,9 @@ note{
   background-color:#CB172B;
   color: white;
 }
-
+a p:hover{
+  color:black;
+}
 /*-----------------------------
    Custom Ordered List
 -----------------------------*/
