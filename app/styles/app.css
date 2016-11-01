@@ -254,6 +254,9 @@ a p:hover{
 #left_navigation a:hover .nav_stop{
      display: block;
 }
+#left_navigation:first-child{
+  margin-top:20px;
+}
 
 
 
