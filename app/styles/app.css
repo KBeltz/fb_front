@@ -249,15 +249,19 @@ a p:hover{
   display: none;
 }
 
-
-
 #left_navigation a:hover .nav_stop{
      display: block;
+}
+#left_navigation a:hover i{
+  color: #339933;
+
 }
 #left_navigation:first-child{
   margin-top:20px;
 }
-
+.green-background{
+  background: #339933;
+}
 
 
 
