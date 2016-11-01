@@ -4,7 +4,7 @@
     </div>
     <div class="profile_panel_content">
 
-      {{#each model as |form|}}
+      {{#each model.form as |form|}}
       <ul class="no-list-style">
                 {{#link-to 'form' form}}
                     <li><b> {{form.template.templateName}}</b></li>
