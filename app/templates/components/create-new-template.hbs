@@ -1,32 +1,31 @@
-<div class="w3-row">
-  <div class="w3-col l4">
-    <h4>Field List</h4>
 
-    {{#fields-list sortedFieldsList=sortedFieldsList}}
+<div class="profile_panel fb_blue-border">
+    <div class="profile_panel_header fb_blue-background white-text">
+        <h1 class="white-text">New Template</h1>
+    </div>
+    <div class="profile_panel_content w3-row">
 
-    {{/fields-list}}
 
-  </div>
-  <div class="w3-col l8">
+        <div class="w3-col s3 m3 l3 ">
 
-    <h4>Template</h4>
+          {{#fields-list sortedFieldsList=sortedFieldsList}}
+          {{/fields-list}}
 
-    {{#field-drag-drop-zone selectedFields=template.templateFields addTemplateFieldToTemplate=(action "addTemplateFieldToTemplate") removeFieldFromFieldsList=(action "removeFieldFromFieldsList") removeTemplateFieldFromTemplate=(action "removeTemplateFieldFromTemplate")}}
+        </div>
+        <div class="white_background w3-card-2 w3-col s8 m8 l8 margin-left-40 min-height-220">
+            <h3 class="w3-margin-left w3-margin-top negative-margin-bottom-10"><span>
+                    <label for="templateName">Template Name: <span class="red-text"> *</span> </label></span>{{input value=template.templateName min="3" maxlength="50" required="true" name="templateName" type="text"}}
+            </h3>
+            <button class="float-right negative-margin-top-30 margin-right-20"  {{action 'createTemplate' template user}}>Save Template</button>
+            <hr>
 
-    {{/field-drag-drop-zone}}
+          {{#field-drag-drop-zone selectedFields=template.templateFields addTemplateFieldToTemplate=(action "addTemplateFieldToTemplate") removeFieldFromFieldsList=(action "removeFieldFromFieldsList") removeTemplateFieldFromTemplate=(action "removeTemplateFieldFromTemplate")}}
 
-  </div>
+          {{/field-drag-drop-zone}}
+        </div>
+
+
+    </div>
 </div>
 
-<div class="w3-row">
-  <div class="w3-col l4">
-    <p></p>
-  </div>
 
-  <div class="w3-col l8">
-
-    <label for="templateName">Template Name (required): </label>{{input value=template.templateName min="3" maxlength="50" required="true" name="templateName" type="text"}}
-    <button {{action 'createTemplate' template user}}>Save Template</button>
-
-  </div>
-</div>

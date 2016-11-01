@@ -1,6 +1,6 @@
 <article>
-  <ul class="fields-list">
-  {{#each sortedFieldsList as |field|}}
+  <ul class="fields-list no-list-style">
+  {{#each availableFieldsList as |field|}}
     {{#field-drag-drop content=field.id field=field}}
 
     {{/field-drag-drop}}
