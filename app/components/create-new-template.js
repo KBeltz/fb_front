@@ -4,11 +4,13 @@ export default Ember.Component.extend({
 
   orderNumber: 0,
 
-  sortedFieldsList: Ember.computed.sort('availableFieldsList', 'sortDefinition'),
-  sortDefinition: ['id:desc'],
+  sortedFieldsList: Ember.computed('availableFieldsList', function() {
+    return this.get('availableFieldsList');
+  }),
 
 
-  store: Ember.inject.service('store'),
+  store: Ember.inject.service(),
+  routing: Ember.inject.service('-routing'),
 
   actions: {
     createTemplate(template, user) {
@@ -23,13 +25,14 @@ export default Ember.Component.extend({
           templateField.save();
         });
       });
-      this.transitionTo('users');
+      this.get('routing').transitionTo('users');
     },
 
     addTemplateFieldToTemplate(fieldId) {
       var orderNumber = this.set('orderNumber', this.get('orderNumber') +1);
       var template = this.get('template');
       var field = this.get('store').peekRecord('field', fieldId);
+      console.log(orderNumber)
       return this.get('store').createRecord('template-field', {
         template: template,
         field: field,
@@ -39,33 +42,30 @@ export default Ember.Component.extend({
 
     removeTemplateFieldFromTemplate(templateField) {
       var templateFields = this.get('template').get('templateFields');
-      templateFields.removeObject(templateField);
       var fieldId = templateField.get('field').get('id');
+
+      var oldTemplateField = templateFields.removeObject(templateField);
+      templateField.destroyRecord();
       var sortedFieldsList = this.get('sortedFieldsList');
       var fieldToAdd = this.get('store').peekRecord('field', fieldId);
-      sortedFieldsList.addObject(fieldToAdd);
+
+      this.set('orderNumber', this.get('orderNumber') -1);
+      templateFields.forEach(function(templateField, index) {
+        templateField.set('orderNum', (index + 1));
+      });
+
+      sortedFieldsList.addObject(fieldToAdd).sort('sortedFieldsList', 'sortDefinition');
     },
 
     removeFieldFromFieldsList(fieldId) {
       var sortedFieldsList = this.get('sortedFieldsList');
-      // var fieldToDisable = availableFieldsList.get('field', fieldId);
-
-      // set(fieldToDisable, 'selectable', false);
-      // find(function(item) {
-      //   if (item.id === fieldToDisable.id) {
-      //
-      //   }
-      // }, availableFieldsList)
-      // EmberInspector.inspect(fieldToDisable);
       var fieldToRemove = this.get('store').peekRecord('field', fieldId);
       sortedFieldsList.removeObject(fieldToRemove);
     },
 
-    // addFieldToFieldsList(fieldId) {
-    //   console.log("Field with ID " + fieldId + " would have reappeared in the list!");
-    //   var availableFieldsList = this.get('availableFieldsList');
-    //   var fieldToAdd = this.get('store').peekRecord('field', fieldId);
-    //   availableFieldsList.addObject(fieldToAdd);
-    // }
+    addFieldToDisabledFieldsList(fieldId) {
+      var fieldToDisable = this.get('store').peekRecord('field', fieldId);
+      this.get('disabledFieldsList').pushObject(fieldToDisable);
+    },
   }
 });
