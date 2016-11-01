@@ -3,9 +3,8 @@
         <h1>List of Uncompleted Forms</h1><br><br>
     </div>
     <div class="profile_panel_content">
-
         <ul class="no-list-style">
-          {{#each model.form as |form|}}
+          {{#each model as |form|}}
             {{#link-to 'user-forms-index.user-forms-show' form}}
                 <li>{{form.template.templateName}}</li>
             {{/link-to}}
