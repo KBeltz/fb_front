@@ -33,7 +33,15 @@
   margin: 0px;
 }
 
-.field-list-item:hover{
+.field-list-item {
+  list-style: none;
+  border: 1px solid green;
+  width: 300px;
+  padding: 3px;
+  margin: 3px;
+  border-radius: 5px;
+}
+.field-list-item:hover {
   background: rgba(49, 170, 189, 0.06);
   border: 1px solid #0b9cbd;
 }
