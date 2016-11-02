@@ -10,8 +10,8 @@ Ember.MODEL_FACTORY_INJECTIONS = true;
 App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
-  Resolver,
-  rootElement: '#main_container'
+  Resolver
+  // rootElement: '#main_container'
 });
 
 // Global error handlers written by Chris Foral on 10-12-16
