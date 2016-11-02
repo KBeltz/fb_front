@@ -4,7 +4,9 @@ export default Ember.Route.extend({
   model() {
     return this.get('store').findAll('user', {reload: true}).then(users => users.sortBy('lastName', 'firstName'));
   },
-
+  renderTemplate() {
+    this.render('template-show.send-template', { into: 'application' });
+  },
   actions: {
     sendTemplate() {
       console.log("send template action");
