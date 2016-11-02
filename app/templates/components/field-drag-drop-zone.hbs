@@ -1,8 +1,5 @@
 <ol class="selected-fields-list min-height-220 ">
   {{#each selectedFields as |templateField|}}
-
-{{yield}}
-
-    <li>{{templateField.field.fieldName}} <button {{action removeField}}> x </button></li>
+    <li>{{templateField.field.fieldName}} <button {{action removeTemplateFieldFromTemplate templateField}}>x</button></li>
   {{/each}}
 </ol>

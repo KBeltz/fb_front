@@ -7,8 +7,4 @@ export default Ember.Component.extend({
   dragStart(event) {
     return event.dataTransfer.setData('text/data', this.get('content'));
   },
-
-
-  classNameBindings: ['disabled'],
-  disabled: false
 });

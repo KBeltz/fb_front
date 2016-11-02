@@ -6,6 +6,12 @@
 
         <b>Form Name:</b> {{ model.template.templateName }}
 
+        <ul class="no-list-style">
+          {{#each model.submissions as |submission|}}
+              <li><strong>{{submission.field.fieldName}}</strong> - {{submission.submissionText}}</li>
+          {{/each}}
+        </ul>
+
     </div>
 </div>
 
