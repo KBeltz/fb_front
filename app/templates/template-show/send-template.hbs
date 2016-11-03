@@ -2,7 +2,7 @@
 <ul style="list-style: none">
   {{#each model.user as |user index|}}
     <li>
-      {{list.list-item index}}. User {{user.id}}: {{user.firstName}} {{user.lastName}} <button {{action "sendTemplate" user model.form}} class="w3-btn-floating-small w3-ripple w3-teal"><i class="fa fa-envelope"></i> Send It</button>
+      {{list.list-item index}}. User {{user.id}}: {{user.firstName}} {{user.lastName}} <button {{action "sendTemplate" user model.form model.template}} class="w3-btn-floating-small w3-ripple w3-teal"><i class="fa fa-envelope"></i> Send It</button>
     </li>
   {{/each}}
 </ul>
