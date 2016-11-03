@@ -7,5 +7,9 @@ export default DS.Model.extend({
   // updateTime: DS.attr('date'),
   // insertTime: DS.attr('date'),
   submissions: DS.hasMany('submission'),
-  templateFields: DS.hasMany('template-field')
+  templateFields: DS.hasMany('template-field'),
+  numericId: function(){
+    var id = this.get('id');
+    if (id) { return +id; }
+  }.property('id')
 });

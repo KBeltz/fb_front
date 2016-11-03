@@ -6,7 +6,7 @@ export default Ember.Route.extend({
     return RSVP.hash({
       template: this.store.createRecord('template'),
       user: this.get('store').findRecord('user', params['user_id']),
-      availableFieldsList: this.get('store').findAll('field')
+      availableFieldsList: this.get('store').findAll('field').then(list => list.sortBy('numericId:asc'))
     });
   },
 

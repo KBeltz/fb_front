@@ -34,7 +34,7 @@
   margin: 0px;
 }
 
-.field-list-item:hover{
+.field-list-item:hover {
   background: rgba(49, 170, 189, 0.06);
   border: 1px solid #0b9cbd;
 }
@@ -95,9 +95,7 @@ margin-left: 40px;
 .card-220px-height{
   height:220px;
 }
-a:hover{
-  color:#0b9cbd;
-}
+
 .button-green{
   background: #339933;
   color: #white;
@@ -115,9 +113,7 @@ note{
   background-color:#CB172B;
   color: white;
 }
-a p:hover{
-  color:black;
-}
+
 /*-----------------------------
    Custom Ordered List
 -----------------------------*/
