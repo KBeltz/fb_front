@@ -13,9 +13,14 @@ export default Ember.Route.extend({
     this.render('template-show.send-template', { into: 'application' });
   },
   actions: {
-    sendTemplate(user) {
+    sendTemplate(user, form) {
       console.log("send template action");
       console.log(user.id);
+      form.set('isComplete', 'N');
+      form.set('recipientUser', user);
+      console.log("FORM: " + form);
+      form.save();
+      this.transitionTo('template');
     }
   }
 });
