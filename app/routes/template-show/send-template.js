@@ -18,15 +18,18 @@ export default Ember.Route.extend({
       console.log(user.id);
       form.set('isComplete', 'N');
       form.set('recipientUser', user);
-      console.log("FORM: " + form);
-      try {
-        form.save();
-        this.transitionTo('template');
-      } catch(reason) {
-        console.log(reason);
-        this.transitionTo('/');
-      }
+      this.get('store').findRecord('template', 30).then(function(t) {
+        form.set('template', t);
+        console.log("FORM: " + form);
+        form.save().catch(function(reason) {
+          console.log("REASON");
+          console.log(reason);
+          this.transitionTo('users');
+        });
+      });
 
+
+    this.transitionTo('users');
     }
   }
 });
