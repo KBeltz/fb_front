@@ -35,6 +35,7 @@
 
   {{content-for "head"}}
 
+
   <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
   <link rel="stylesheet" href="{{rootURL}}assets/poc.css">
 
@@ -43,6 +44,8 @@
   <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-teal.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!--fontawesome-->
+    <script src="https://use.fontawesome.com/6c733c7d8e.js"></script>
 
   {{content-for "head-footer"}}
 </head>
@@ -64,22 +67,23 @@
       </div>
     </header>
 
-    <div id="left_navigation">
-      <div id="left_navigation_top"></div>
-      <a href="https://qa.network.atssecured.com/?do=profile" id="a_1_1">Profile <span class="nav_stop" style="background: #8D5FA1;"></span></a>
-      <a href="https://qa.network.atssecured.com/?do=contacts" id="a_1_2">Network <span class="nav_stop" style="background: #67C116;"></span></a>
-      <a href="https://qa.network.atssecured.com/?do=docs" id="a_1_3">Documents <span class="nav_stop" style="background: #F26841;"></span></a>
-      <a href="/" id="a_1_12">Form Builder <span class="nav_stop" style="background: #0b9cbd;"></span></a>
-      <a href="https://qa.pay.atssecured.com/">Payments <span class="nav_stop" style="background: #0F857C;"></span></a>
-      <a href="https://qa.network.atssecured.com/?do=mail" id="a_1_5">Messages <span class="nav_stop" style="background: #4378CC;"></span></a>
-      <a href="https://qa.network.atssecured.com/?do=orgs" id="a_1_6">Organizations <span class="nav_stop" style="background: #FFAE44;"></span></a>
-      <a href="https://qa.network.atssecured.com/?do=calendar" id="a_1_7">Calendar <span class="nav_stop" style="background: #FAD843;"></span></a>
-      <a href="https://qa.network.atssecured.com/?do=pics" id="a_1_8">Pictures <span class="nav_stop" style="background: #CD379C;"></span></a>
-      <a href="https://qa.network.atssecured.com/?do=notes" id="a_1_9">Notes <span class="nav_stop" style="background: #637D8D"></span></a>
-      <a href="https://qa.network.atssecured.com/?do=bookmarks" id="a_1_10">Bookmarks <span class="nav_stop" style="background: #7748D4;"></span></a>
-      <a href="https://qa.network.atssecured.com/?do=settings" id="a_1_11">Settings <span class="nav_stop" style="background: #969696;"></span></a>
-      <div id="left_navigation_bottom"></div>
-    </div>
+        <nav id="left_navigation">
+          <!--<div class="navigation_list">-->
+          <a href="https://qa.network.atssecured.com/?do=profile" id="a_1_1"> <i class="fa fa-user"></i> Profile <span class="nav_stop green-background" ></span></a>
+          <a href="https://qa.network.atssecured.com/?do=contacts" id="a_1_2"> <img src="/assets/Network-icon.svg" alt="">Network <span class="nav_stop green-background" ></span></a>
+          <a href="https://qa.network.atssecured.com/?do=docs" id="a_1_3"> <i class="fa fa-file-text"></i> Documents <span class="nav_stop green-background"></span></a>
+          <a href="/" id="a_1_12"> <i class="fa fa-code"></i> Form Builder <span class="nav_stop green background" ></span></a>
+          <a href="https://qa.pay.atssecured.com/"> <i class="fa fa-money"></i> Payments <span class="nav_stop green-background"></span></a>
+          <a href="https://qa.network.atssecured.com/?do=mail" id="a_1_5"> <i class="fa fa-commenting-o"></i> Messages <span class="nav_stop green-background"></span></a>
+          <a href="https://qa.network.atssecured.com/?do=orgs" id="a_1_6"> <i class="fa fa-building"></i> Organizations <span class="nav_stop green-background" ></span></a>
+          <a href="https://qa.network.atssecured.com/?do=calendar" id="a_1_7"> <i class="fa fa-calendar"></i> Calendar <span class="nav_stop green-background" ></span></a>
+          <a href="https://qa.network.atssecured.com/?do=pics" id="a_1_8"> <i class="fa fa-picture-o"></i> Pictures <span class="nav_stop green-background" ></span></a>
+          <a href="https://qa.network.atssecured.com/?do=notes" id="a_1_9"> <i class="fa fa-sticky-note"></i> Notes <span class="nav_stop green-background" ></span></a>
+          <a href="https://qa.network.atssecured.com/?do=bookmarks" id="a_1_10"> <i class="fa fa-bookmark"></i> <span class="nav_stop green-background" ></span> Bookmarks </a>
+          <a href="https://qa.network.atssecured.com/?do=settings" id="a_1_11"> <i class="fa fa-gear"></i> <span class="nav_stop green-background" ></span> Settings </a>
+          <!--</div>-->
+        </nav>
+
 
     <main id="main_container">
       <noscript>We're sorry, but ATS Secured requires JavaScript to be enabled in order to function correctly. Please enable JavaScript or download a JavaScript-enabled browser before continuing.</noscript>
