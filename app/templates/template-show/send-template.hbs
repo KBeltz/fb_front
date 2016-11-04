@@ -1,12 +1,17 @@
 <div class="profile_panel fb_blue-border">
     <div class="profile_panel_header fb_blue-background white-text">
+
         <h1>Select user to send Template to</h1><br><br>
     </div>
-<ul style="list-style: none">
-  {{#each model.user as |user index|}}
-    <li>
-      {{list.list-item index}}. User {{user.id}}: {{user.firstName}} {{user.lastName}} <button {{action "sendTemplate" user model.form model.template}} class="w3-btn-floating-small w3-ripple fb_blue-background"><i class="fa fa-envelope"></i> Send It</button>
-    </li>
-  {{/each}}
-</ul>
+
+    <div class="profile_panel_content">
+        <ul style="list-style: none">
+          {{#each model.user as |user index|}}
+              <li>
+                {{list.list-item index}}. {{user.firstName}} {{user.lastName}} <button {{action "sendTemplate" user model.form model.template}} class="w3-btn-floating-small w3-ripple fb_blue-background w3-right w3-margin-right"><i class="fa fa-envelope"></i> Send It</button>
+              </li>
+          {{/each}}
+        </ul>
     </div>
+</div>
+
