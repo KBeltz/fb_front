@@ -1,13 +1,15 @@
 <div class="profile_panel fb_blue-border">
     <div class="profile_panel_header fb_blue-background white-text">
-        <h1>Literally Just Templates</h1><br><br>
+        <h1>Templates</h1><br><br>
     </div>
     <div class="profile_panel_content">
       {{#each model as |template|}}
-          <ul>
+          <ul class="no-list-style">
               <li style="list-style:none">
                 {{#link-to 'template-show' template}}
-                  {{template.templateName}}
+                    <div class="w3-margin">
+                      {{template.templateName}}
+                    </div>
                 {{/link-to}}
               </li>
           </ul>

@@ -20,6 +20,7 @@
   background: #f7f5f5;
   border: 1px solid #aba7a7;
   border-radius: 5px;
+  width: 80%;
 }
 .field-list-item {
   padding: 10px;
@@ -33,14 +34,6 @@
   margin: 0px;
 }
 
-.field-list-item {
-  list-style: none;
-  border: 1px solid green;
-  width: 300px;
-  padding: 3px;
-  margin: 3px;
-  border-radius: 5px;
-}
 .field-list-item:hover {
   background: rgba(49, 170, 189, 0.06);
   border: 1px solid #0b9cbd;
@@ -102,9 +95,7 @@ margin-left: 40px;
 .card-220px-height{
   height:220px;
 }
-a:hover{
-  color:#0b9cbd;
-}
+
 .button-green{
   background: #339933;
   color: #white;
@@ -118,7 +109,10 @@ note{
 .min-height-220{
   min-height: 220px;
 }
-
+.alert-button{
+  background-color:#CB172B;
+  color: white;
+}
 
 /*-----------------------------
    Custom Ordered List
@@ -162,3 +156,114 @@ note{
 /*li ol,*/
 /*li ul {margin-top:6px;}*/
 /*ol ol li:last-child {margin-bottom:0;}*/
+/*---------------------------------------------
+*  OVERWRITING Existing css from shared layout
+----------------------------------------------*/
+#left_navigation a{
+  text-align: left;
+}
+
+#left_navigation {
+   top: 0px;
+  width: 180px;
+   padding-left: 0px;
+}
+
+#left_navigation_top{
+  display:none;
+}
+
+#left_navigation a {
+  color: #404040;
+  background: #fff;
+}
+
+#all_wrapper{
+  background-color: #f2f2f2;
+}
+
+#left_navigation {
+  background: #fff;
+}
+.nav_stop {
+  left: -8px;
+  width: 8px;
+  height: 98%;
+}
+#left_navigation_bottom{
+  display: none;
+}
+#main_container {
+  width: calc(100% - 200px);
+  padding:0px;
+}
+#left_navigation a:hover, #left_navigation a:active {
+  background: #f5f3f3;
+}
+#left_navigation a{
+  line-height: 26px;
+  color: rgba(0,0,0,.75);
+  font-size:18px;
+  display: block;
+  box-sizing: border-box;
+}
+/*---------------------------------------------
+*  Shared Layout
+----------------------------------------------*/
+#left_navigation a i, #left_navigation a img {
+  padding: 0px 5px;
+}
+#main_header{
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.10);
+  z-index: 4;
+}
+.nav_tabs {
+    color: white;
+    margin-top: -30px;
+}
+.nav_tabs ul li{
+  padding-left:40px;
+}
+  .main_container_header_nav ul li {
+    display: inline-block;
+}
+  .nav_tabs li {
+    padding: 10px 15px;
+    background:white;
+    margin-bottom:0px !important;
+    margin-top:5px;
+    -webkit-border-radius:8px 8px 0px 0px ;
+    -moz-border-radius:8px 8px 0px 0px ;
+    border-radius:8px 8px 0px 0px ;
+    color: #000;
+}
+.nav_tabs li:first-child{
+    margin-left: 35px;
+}
+
+.nav_stop{
+  display: none;
+}
+
+#left_navigation a:hover .nav_stop{
+     display: block;
+}
+#left_navigation a:hover i{
+  color: #339933;
+
+}
+#left_navigation:first-child{
+  margin-top:20px;
+}
+.green-background{
+  background: #339933;
+}
+
+
+
+
+
+
+
+
+
