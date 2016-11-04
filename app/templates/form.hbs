@@ -1,18 +1,28 @@
-<div class="profile_panel fb_blue-border">
+<div class="profile_panel fb_blue-border ">
     <div class="profile_panel_header fb_blue-background white-text">
         <h1>Completed Form Show</h1><br><br>
     </div>
-    <div class="profile_panel_content">
+    <div class="profile_panel_content ">
 
-        <b>Form Name:</b> {{ model.template.templateName }}
 
-        <ul class="no-list-style">
-          {{#each model.submissions as |submission|}}
-              <li><strong>{{submission.field.fieldName}}</strong> - {{submission.submissionText}}</li>
-          {{/each}}
-        </ul>
+        <div class="white_background w3-card-2 w3-col s8 m8 l8 margin-20px">
+            <h3 class="w3-margin-left w3-margin-top negative-margin-bottom-10"><span>{{model.template.templateName}}</span></h3>
+            <hr>
+          <div class="w3-row">
+    <ul style="list-style:none">
+      {{#each model.submissions as |submission|}}
+          <li >
+              <b class="w3-padding-16"> {{submission.field.fieldName}}:</b>
 
-    </div>
+            {{submission.submissionText}}
+          </li>
+      {{/each}}
+    </ul>
+          </div>
+</div>
+
+        </div>
+
 </div>
 
 
