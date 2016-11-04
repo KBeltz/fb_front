@@ -3,16 +3,22 @@
         <h1>Completed Forms</h1><br><br>
     </div>
     <div class="profile_panel_content">
+        <table class="w3-table w3-bordered">
+            <tr>
+                <th>Template Name</th>
+                <th>Recipient Name</th>
+                <th>Date Filled Out</th>
+            </tr>
+            {{#each model.form as |form|}}
+                    <tr>
+                      {{#link-to 'form' form}}
+                          <td>{{form.template.templateName}}</td>
+                      {{/link-to}}
 
-      {{#each model.form as |form|}}
-      <ul class="no-list-style">
-                {{#link-to 'form' form}}
-                    <li><b> {{form.template.templateName}}</b></li>
-                    <li>{{form.recipientUser.firstName}} {{form.recipientUser.lastName}} </li>
-                    <li>{{form.dateFilledOut}}</li>
-                {{/link-to}}
-      </ul>
-      {{/each}}
-
+                        <td>{{form.recipientUser.firstName}} {{form.recipientUser.lastName}}</td>
+                        <td>{{form.dateFilledOut}}</td>
+                    </tr>
+            {{/each}}
+        </table>
     </div>
 </div>
