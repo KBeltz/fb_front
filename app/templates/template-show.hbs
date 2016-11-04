@@ -1,7 +1,10 @@
 <div class="w3-row">
 
-    <div class="white_background w3-card-2 w3-col s6 m6 l6 margin-20px">
+    <div class="white_background w3-card-2 w3-col s8 m8 l8 margin-20px">
         <h3 class="w3-margin-left w3-margin-top negative-margin-bottom-10"><span>{{model.templateName}}</span></h3>
+        <!--ID: {{model.id}}-->
+      {{#link-to 'template-show.send-template' (query-params template=model.id)}}<button class="w3-btn w3-dark-grey btn-1 negative-margin-top-30 margin-right-20 float-right">Send Template</button>{{/link-to}}
+      {{outlet}}
         <hr>
         <ul style="list-style:none">
           {{#each model.templateFields as |templateField|}}
@@ -14,11 +17,7 @@
           {{/each}}
         </ul>
     </div>
-    <div class="w3-col s5 m5 l5 margin-20px">
-        <!--ID: {{model.id}}-->
-      {{#link-to 'template-show.send-template' (query-params template=model.id)}}<button class="w3-btn w3-dark-grey btn-1 margin-left-40">Send Template</button>{{/link-to}}
-      {{outlet}}
-    </div>
+
 
 </div>
 
