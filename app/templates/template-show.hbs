@@ -14,7 +14,6 @@
         </ul>
     </div>
     <div class="w3-col s5 m5 l5">
-        ID: {{model.id}}
       {{#link-to 'template-show.send-template' (query-params template=model.id)}}<button class="w3-btn w3-dark-grey btn-1 margin-left-40">Send Template</button>{{/link-to}}
       {{outlet}}
     </div>
